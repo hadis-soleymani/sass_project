@@ -11,14 +11,13 @@
 body {
   background-color: $bgColor;
 }
- //Header styles
+//Header styles
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.8rem 3rem;
   background: $primaryColor;
-
   h1 {
     @include textStyle(1.3rem, bold, $seconderyColor);
   }
@@ -40,22 +39,18 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-
   img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
   }
-
   nav {
     margin-right: 40px;
   }
-
   ul {
     display: flex;
     list-style-type: none;
   }
-
   a {
     text-decoration: none;
     padding: 10px;
@@ -67,11 +62,112 @@ body {
   }
 }
 //Main styles
+.main {
+  display: flex;
+  margin: 2rem 3rem;
+  aside {
+    margin-right: 25px;
+    width: 25%;
+    @include bodyStyle;
+    @include boxStyle;
+
+    div {
+      width: 100%;
+      height: 110px;
+      line-height: 110px;
+      background-color: $primaryColor;
+      text-align: center;
+      margin: 20px 10px;
+      @include boxStyle;
+      @include textStyle(1rem, bold, $seconderyColor);
+    }
+  }
+  main {
+    width: 75%;
+    @include bodyStyle;
+    @include boxStyle;
+
+    img {
+      width: 200px;
+      @include boxStyle;
+    }
+
+    h2 {
+      @include textStyle(4rem, bold, $primaryColor);
+      margin: 2rem 0 3rem;
+    }
+    p {
+      @include textStyle(2rem, bold, $textColor);
+    }
+  }
+}
+
+//Cards style
+.cards {
+  width: calc(100% - 6rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  padding: 20px 0;
+  gap: 30px;
+}
+.card {
+  @include boxStyle;
+  img {
+    width: 100%;
+    height: 240px;
+    display: block;
+  }
+  .card_content{
+    background-color: $seconderyColor;
+    line-height: 1.5rem;
+    padding: 15px;
+    p{
+      margin: 10px 0;
+      @include textStyle(1.1rem ,100,$textColor)
+    }
+    span{
+      display: inline-block;
+      margin: 10px 0;
+      @include textStyle (.9rem ,bold,$primaryColor);
+    }
+  }
+}
+
+
+
 @include media(M) {
   .hamburger-menu {
     display: flex;
   }
   .navbar {
     display: none;
+  }
+
+  .main {
+    flex-direction: column-reverse;
+    margin: 1rem;
+    main {
+      width: calc(100% - 2rem);
+      margin-bottom: 20px;
+      height: 500px;
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    aside {
+      width: calc(100% - 2rem);
+    }
+  }
+  .cards{
+    grid-template-columns: 1fr ;
+    margin: 0 auto;
+  }
+}
+@include media(L) {
+  .cards{
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
   }
 }
