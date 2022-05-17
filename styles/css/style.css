@@ -4,4 +4,21 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-color: #edf2f7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 3rem;
+  background: #654fef;
+}
+.header h1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
 /*# sourceMappingURL=style.css.map */
