@@ -21,6 +21,19 @@ body {
   color: #fff;
 }
 
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+}
+.hamburger-menu span {
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  margin: 2px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -47,6 +60,16 @@ body {
 }
 .navbar a:hover {
   color: rgb(27, 27, 27);
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .navbar {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
