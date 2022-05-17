@@ -1,0 +1,9 @@
+//Variables
+@import "variables";
+
+//Mixines
+@import "mixins";
+
+*{
+    @include overal;
+}
