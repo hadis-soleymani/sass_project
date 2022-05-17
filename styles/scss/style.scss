@@ -119,23 +119,52 @@ body {
     height: 240px;
     display: block;
   }
-  .card_content{
+  .card_content {
     background-color: $seconderyColor;
     line-height: 1.5rem;
     padding: 15px;
-    p{
+    p {
       margin: 10px 0;
-      @include textStyle(1.1rem ,100,$textColor)
+      text-align: justify;
+      @include textStyle(1.1rem, 100, $textColor);
     }
-    span{
+    span {
       display: inline-block;
       margin: 10px 0;
-      @include textStyle (.9rem ,bold,$primaryColor);
+      @include textStyle(0.9rem, bold, $primaryColor);
     }
   }
 }
+footer {
+  display: flex;
+  padding: 2rem 3rem;
+  margin-top: 30px;
+  background-color: $primaryColor;
+  .summary {
+    width: 50%;
+    p {
+      @include textStyle(1.2rem, 100, $seconderyColor);
+      text-align: justify;
+    }
+  }
+  .links {
+    padding: 0 5rem;
+    ul {
+      list-style: none;
+    }
+    a {
+      @include textStyle(1.2rem, bold, $seconderyColor);
+      display: inline-block;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: all 0.15s ease-in;
 
-
+      &:hover {
+        color: $textColor;
+      }
+    }
+  }
+}
 
 @include media(M) {
   .hamburger-menu {
@@ -160,13 +189,23 @@ body {
       width: calc(100% - 2rem);
     }
   }
-  .cards{
-    grid-template-columns: 1fr ;
+  .cards {
+    grid-template-columns: 1fr;
     margin: 0 auto;
+  }
+  footer{
+    flex-direction: column;
+    .summary{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .links{
+      padding: 0;
+    }
   }
 }
 @include media(L) {
-  .cards{
+  .cards {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
   }

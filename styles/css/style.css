@@ -152,6 +152,7 @@ body {
 }
 .card .card_content p {
   margin: 10px 0;
+  text-align: justify;
   font-size: 1.1rem;
   font-weight: 100;
   color: rgb(27, 27, 27);
@@ -162,6 +163,40 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
   color: #654fef;
+}
+
+footer {
+  display: flex;
+  padding: 2rem 3rem;
+  margin-top: 30px;
+  background-color: #654fef;
+}
+footer .summary {
+  width: 50%;
+}
+footer .summary p {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #fff;
+  text-align: justify;
+}
+footer .links {
+  padding: 0 5rem;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: all 0.15s ease-in;
+}
+footer .links a:hover {
+  color: rgb(27, 27, 27);
 }
 
 @media (max-width: 768px) {
@@ -192,6 +227,17 @@ body {
   .cards {
     grid-template-columns: 1fr;
     margin: 0 auto;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+  footer .summary {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  footer .links {
+    padding: 0;
   }
 }
 @media (max-width: 1200px) and (min-width: 768px) {
